@@ -1,0 +1,11 @@
+:host ::ng-deep p-menubar {
+  .p-menubar {
+    padding: 0 1rem;
+    border: none;
+    border-radius: 0;
+
+    .p-menubar-button {
+      display: none;
+    }
+  }
+}

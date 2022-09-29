@@ -1,0 +1,20 @@
+<!-- <div class="row">
+  <div class="col-4">
+    <button type="button" pButton label=Up" routerLink="/sign-up-form"></button>
+  </div>
+  <div class="col-4">
+    <button type="button" pButton label="Home" routerLink="/"></button>
+  </div>
+</div> -->
+<p-menubar>
+  <ng-template pTemplate="start">
+    <h3 routerLink="/">BirthMe</h3>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <i class="pi pi-user" routerLink="/sign-uo-form"></i>
+  </ng-template>
+</p-menubar>
+
+<router-outlet></router-outlet>
+
+<p-toast position="top-center"></p-toast>
