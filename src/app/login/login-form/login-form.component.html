@@ -1,0 +1,35 @@
+
+<div class="row align-vertical">
+  <div class="col-12">
+    <h1 class="title">Birth Me</h1>
+    <form class="mb-800" [formGroup]="userForm" (submit)="login()">
+      <div class="row">
+        <div class="col-12">
+          <span class="p-float-label">
+            <input id="username" type="text" formControlName="username" pInputText> 
+            <label for="username">Username</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <span class="p-float-label">
+            <input id="password" type="password" formControlName="password" pInputText> 
+            <label for="password">Password</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="row mt-100">
+        <div class="col-12">
+          <button pButton type="submit" label="Continue" [disabled]="!canLogin()"></button>
+          <span class="sign-up">
+            Don't have an account?
+            <span class="link" (click)="goToSignUp()">Sign Up</span>
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

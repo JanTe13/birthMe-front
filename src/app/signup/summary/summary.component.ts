@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { User } from 'src/shared/models/user.model';
+import { Account } from 'src/shared/models/account.model';
 import { RegisterService } from 'src/shared/services/register.service';
 
 @Component({
@@ -11,28 +11,24 @@ import { RegisterService } from 'src/shared/services/register.service';
 })
 export class SummaryComponent implements OnInit {
 
-  registerUser: User | undefined;
+  account: Account;
 
   constructor(
     private router: Router,
     private registerService: RegisterService,
     private messageService: MessageService
   ) {
-    this.registerUser = this.registerService.registerForm;
+    this.account = this.registerService.account!;
   }
 
   ngOnInit(): void {
-  }
-
-  back(): void {
-    this.router.navigateByUrl('sign-up-form');
   }
 
   confirm(): void {
     this.messageService.add({
       severity:'success',
       summary:'Sign Up Completed',
-      detail: `Welcome to BirthMe, ${this.registerUser?.firstName} ${this.registerUser?.lastName}`
+      detail: `Welcome to BirthMe, ${this.account?.username}!`
     });
     this.router.navigateByUrl('');
   }

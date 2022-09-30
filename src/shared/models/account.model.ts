@@ -1,5 +1,4 @@
-
-export class User {
+export class Account {
   private _firstName: string;
   private _lastName: string;
   private _email: string;
@@ -7,19 +6,19 @@ export class User {
   private _username: string;
   private _password: string;
 
-  constructor(user: any) {
-    this._firstName = user.firstName;
-    this._lastName = user.lastName;
-    this._email = user.email;
-    this._username = user.username;
-    this._password = user.password;
+  constructor() {
+    // this._firstName = user.firstName;
+    // this._lastName = user.lastName;
+    // this._email = user.email;
+    // this._username = user.username;
+    // this._password = user.password;
 
-    if (user.dateOfBirth instanceof Date) {
-      this._dob = user.dateOfBirth.getTime()
-    } else {
-      const dobArray: number[] = user.dateOfBirth.split('/').map((value: string) => parseInt(value));
-      this._dob = new Date(dobArray[2], dobArray[1] - 1, dobArray[0]).getTime();
-    }
+    // if (user.dateOfBirth instanceof Date) {
+    //   this._dob = user.dateOfBirth.getTime()
+    // } else {
+    //   const dobArray: number[] = user.dateOfBirth.split('/').map((value: string) => parseInt(value));
+    //   this._dob = new Date(dobArray[2], dobArray[1] - 1, dobArray[0]).getTime();
+    // }
   }
 
   get firstName(): string {

@@ -1,0 +1,49 @@
+<app-navigation [route]="'/signup-user'"></app-navigation>
+<div class="row">
+  <div class="col-12">
+    <h3 class="text-align-center mb-200">Personal Information</h3>
+    <form [formGroup]="personalForm" (submit)="continue()">
+      <div class="row">
+        <div class="col-12">
+          <span class="p-float-label">
+            <input id="first-name" type="text" formControlName="firstName" pInputText> 
+            <label for="first-name">First Name</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <span class="p-float-label">
+            <input id="last-name" type="text" formControlName="lastName" pInputText> 
+            <label for="last-name">Last Name</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <span class="p-float-label">
+            <input id="email" type="text" formControlName="email" pInputText> 
+            <label for="email">Email</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <span class="p-float-label">
+            <p-calendar formControlName="dateOfBirth" dateFormat="dd/mm/yy" [showIcon]="true"></p-calendar>
+            <label for="dob">Date Of Birth</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="row mt-100">
+        <div class="col-12">
+          <button pButton type="submit" label="Continue" [disabled]="!canContinue()"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

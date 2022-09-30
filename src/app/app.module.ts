@@ -7,7 +7,8 @@ import { MenubarModule } from 'primeng/menubar';
 import { ToastModule } from 'primeng/toast';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterModule } from './register/register.module';
+import { LoginModule } from './login/login.module';
+import { SignupModule } from './signup/signup.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RegisterModule } from './register/register.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    RegisterModule,
+    LoginModule,
+    SignupModule,
     MenubarModule,
     ToastModule
   ],
