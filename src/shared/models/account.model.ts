@@ -1,3 +1,11 @@
+interface AccountJson {
+  FirstName: string;
+  LastName: string;
+  Email: string;
+  DateOfBirth: string;
+  Username: string;
+}
+
 export class Account {
   private _firstName: string;
   private _lastName: string;
@@ -6,19 +14,14 @@ export class Account {
   private _username: string;
   private _password: string;
 
-  constructor() {
-    // this._firstName = user.firstName;
-    // this._lastName = user.lastName;
-    // this._email = user.email;
-    // this._username = user.username;
-    // this._password = user.password;
-
-    // if (user.dateOfBirth instanceof Date) {
-    //   this._dob = user.dateOfBirth.getTime()
-    // } else {
-    //   const dobArray: number[] = user.dateOfBirth.split('/').map((value: string) => parseInt(value));
-    //   this._dob = new Date(dobArray[2], dobArray[1] - 1, dobArray[0]).getTime();
-    // }
+  constructor(account?: AccountJson) {
+    if (account) {
+      this._firstName = account.FirstName;
+      this._lastName = account.LastName;
+      this._email = account.Email;
+      this._username = account.Username;
+      this._dob = parseInt(account.DateOfBirth);
+    }
   }
 
   get firstName(): string {

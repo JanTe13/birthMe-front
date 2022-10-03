@@ -25,11 +25,22 @@ export class SummaryComponent implements OnInit {
   }
 
   confirm(): void {
-    this.messageService.add({
-      severity:'success',
-      summary:'Sign Up Completed',
-      detail: `Welcome to BirthMe, ${this.account?.username}!`
+    this,this.registerService.createAccount().subscribe({
+      next: () => {
+        this.messageService.add({
+          severity:'success',
+          summary:'Sign Up Completed',
+          detail: `Welcome to BirthMe, ${this.account?.username}!`
+        });
+        this.router.navigateByUrl('login');
+      },
+      error: (error: string) => {
+        this.messageService.add({
+          severity:'error',
+          summary:'Error creating the account',
+          detail: error
+        });
+      }
     });
-    this.router.navigateByUrl('');
   }
 }

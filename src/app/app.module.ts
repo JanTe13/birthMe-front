@@ -7,6 +7,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { ToastModule } from 'primeng/toast';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { LoginModule } from './login/login.module';
 import { SignupModule } from './signup/signup.module';
 
@@ -20,6 +21,7 @@ import { SignupModule } from './signup/signup.module';
     AppRoutingModule,
     LoginModule,
     SignupModule,
+    DashboardModule,
     MenubarModule,
     ToastModule
   ],

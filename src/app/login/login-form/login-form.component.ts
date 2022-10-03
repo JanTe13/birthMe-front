@@ -31,7 +31,7 @@ export class LoginFormComponent {
 
   login(): void {
     this.registerService.login(this.userForm.value.username!, this.userForm.value.password!).subscribe({
-      next: () => this.router.navigateByUrl('signup-personal'),
+      next: () => this.router.navigateByUrl('dashboard'),
       error: (error: string) => {
         this.messageService.add({
           severity:'error',

@@ -1,11 +1,21 @@
 :host ::ng-deep p-menubar {
   .p-menubar {
+    height: 60px;
+    width: 100%;
+    position: fixed;
     padding: 0 1rem;
     border: none;
     border-radius: 0;
+    top: 0;
+    z-index: 1;
 
     .p-menubar-button {
       display: none;
     }
   }
+}
+
+.header-title {
+  font-family: cursive;
+  margin: .75rem 0;
 }

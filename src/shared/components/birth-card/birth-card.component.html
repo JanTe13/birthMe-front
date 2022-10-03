@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-3">
+    <div class="date">
+      <p class="day">{{ date | date: 'dd' }}</p>
+      <p class="month">{{ date | date: 'MMMM' }}</p>
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="user">
+      <p class="name">{{ birth.firstName }} {{ birth.lastName }}</p>
+      <p *ngIf="birth.nickname" class="nickname">"{{ birth.nickname }}"</p>
+    </div>
+  </div>
+</div>

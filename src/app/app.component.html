@@ -1,10 +1,10 @@
-<div class="full-height">
+<div>
   <p-menubar *ngIf="isLogged()">
     <ng-template pTemplate="start">
-      <h3 routerLink="">BirthMe</h3>
+      <h2 class="header-title" routerLink="/dashboard">BirthMe</h2>
     </ng-template>
     <ng-template pTemplate="end">
-      <i class="pi pi-user" routerLink="/signup-user"></i>
+      <i class="pi pi-sign-out" (click)="signout()"></i>
     </ng-template>
   </p-menubar>
 

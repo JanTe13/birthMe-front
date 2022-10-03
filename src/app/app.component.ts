@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RegisterService } from 'src/shared/services/register.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,16 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private registerService: RegisterService) {
     this.router.navigate([], { queryParams: {} });
   }
 
   isLogged(): boolean {
-    return false;
+    return !this.router.url.includes('signup') && !this.router.url.includes('login');
+  }
+
+  signout(): void {
+    this.registerService.reset();
+    this.router.navigateByUrl('login');
   }
 }

@@ -1,0 +1,10 @@
+<div class="container header">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="text-align-center mb-200">Upcoming Birthdays</h3>
+      <app-birth-card *ngFor="let birth of calendar" [birth]="birth"></app-birth-card>
+    </div>
+  </div>
+  <button pButton pRipple type="button" icon="pi pi-plus" label="Add Birthday"
+    class="p-button-rounded p-button-outlined"></button>
+</div>

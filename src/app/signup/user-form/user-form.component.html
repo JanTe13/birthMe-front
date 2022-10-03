@@ -1,40 +1,38 @@
 <app-navigation [route]="'/login'"></app-navigation>
-<div class="row">
-  <div class="col-12">
-    <h3 class="text-align-center mb-200">Create Account</h3>
-    <form [formGroup]="userForm" (submit)="continue()">
-      <div class="row">
-        <div class="col-12">
-          <span class="p-float-label">
-            <input id="username" type="text" formControlName="username" pInputText> 
-            <label for="username">Username</label>
-          </span>
-        </div>
+<div class="container header">
+  <h3 class="text-align-center mb-200">Create Account</h3>
+  <form [formGroup]="userForm" (submit)="continue()">
+    <div class="row">
+      <div class="col-12">
+        <span class="p-float-label">
+          <input id="username" type="text" formControlName="username" pInputText> 
+          <label for="username">Username</label>
+        </span>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-12">
-          <span class="p-float-label">
-            <input id="password" type="password" formControlName="password" pInputText> 
-            <label for="password">Password</label>
-          </span>
-        </div>
+    <div class="row">
+      <div class="col-12">
+        <span class="p-float-label">
+          <input id="password" type="password" formControlName="password" pInputText> 
+          <label for="password">Password</label>
+        </span>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-12">
-          <span class="p-float-label">
-            <input id="confirm-password" type="password" formControlName="confirmPassword" pInputText> 
-            <label for="confirm-password">Confirm Password</label>
-          </span>
-        </div>
+    <div class="row">
+      <div class="col-12">
+        <span class="p-float-label">
+          <input id="confirm-password" type="password" formControlName="confirmPassword" pInputText> 
+          <label for="confirm-password">Confirm Password</label>
+        </span>
       </div>
+    </div>
 
-      <div class="row mt-100">
-        <div class="col-12">
-          <button pButton type="submit" label="Continue" [disabled]="!canContinue()"></button>
-        </div>
+    <div class="row mt-100">
+      <div class="col-12">
+        <button pButton type="submit" label="Continue" [disabled]="!canContinue()"></button>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
 </div>
