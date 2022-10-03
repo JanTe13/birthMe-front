@@ -33,3 +33,28 @@
   color: white;
   border-radius: 20px;
 }
+
+:host ::ng-deep p-sidebar {
+  .p-sidebar-bottom {
+    height: auto;
+  }
+
+  h3 {
+    margin-bottom: .5rem;
+  }
+
+  h4 {
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 13px;
+    color: var(--text-color-secondary);
+  }
+}
+
+app-birth-card {
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}

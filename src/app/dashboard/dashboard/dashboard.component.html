@@ -1,10 +1,57 @@
 <div class="container header">
   <div class="row">
     <div class="col-12">
-      <h3 class="text-align-center mb-200">Upcoming Birthdays</h3>
       <app-birth-card *ngFor="let birth of calendar" [birth]="birth"></app-birth-card>
     </div>
   </div>
   <button pButton pRipple type="button" icon="pi pi-plus" label="Add Birthday"
-    class="p-button-rounded p-button-outlined"></button>
+    class="p-button-rounded p-button-outlined mt-100" (click)="openAddBirthday()"></button>
 </div>
+
+<p-sidebar [(visible)]="addBirthdayOpen" (onHide)="closeAddBirthday()" position="bottom" [baseZIndex]="10000">
+  <h3>New Birthday</h3>
+  <h4>Fill in all the fields to add a new Birthday to your list.</h4>
+  <form [formGroup]="birthdayForm" (submit)="addBirthday()">
+    <div class="row">
+      <div class="col-12">
+        <span class="p-float-label">
+          <input id="first-name" type="text" formControlName="firstName" pInputText> 
+          <label for="first-name">First Name</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <span class="p-float-label">
+          <input id="last-name" type="text" formControlName="lastName" pInputText> 
+          <label for="last-name">Last Name</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <span class="p-float-label">
+          <input id="nickname" type="text" formControlName="nickname" pInputText> 
+          <label for="nickname">Nickname</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <span class="p-float-label">
+          <p-calendar formControlName="dateOfBirth" dateFormat="dd/mm/yy" [showIcon]="true"></p-calendar>
+          <label for="dob">Date Of Birth</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="row mt-100">
+      <div class="col-12">
+        <button pButton type="submit" label="Add Birthday" [disabled]="!canAddBirthday()"></button>
+      </div>
+    </div>
+  </form>
+</p-sidebar>
